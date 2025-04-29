@@ -1,0 +1,38 @@
+/* css/responsive.css */
+
+/* Адаптивність для екранів з шириною менше 768px */
+@media screen and (max-width: 768px) {
+    /* Перестроювання навігаційного меню */
+    nav.w3-bar a {
+      display: block;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  
+    /* Зменшення падінгів основного контейнера */
+    main {
+      padding: 15px;
+    }
+  
+    /* Галерея – всі елементи займають 100% ширини */
+    .gallery {
+      flex-direction: column;
+    }
+    
+    .gallery-item {
+      flex: 1 1 100%;
+    }
+  }
+  
+  /* Додаткові коригування для планшетів (максимум 1024px) */
+  @media screen and (max-width: 1024px) {
+    /* Можна зменшити розміри шрифтів або падінги для покращення вигляду */
+    h1 {
+      font-size: 2em;
+    }
+  
+    h2 {
+      font-size: 1.8em;
+    }
+  }
+  

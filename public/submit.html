@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Подати заявку або скаргу</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+  <header>
+    <h1>Подати заявку або скаргу</h1>
+  </header>
+  <nav class="w3-bar w3-border-bottom w3-dark-grey">
+    <a href="index.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-home"></i> Головна
+    </a>
+    <a href="contacts.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-phone"></i> Контакти
+    </a>
+    <a href="news.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-newspaper-o"></i> Новини
+    </a>
+    <a href="developments.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-lightbulb-o"></i> Розробки
+    </a>
+    <a href="price.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-tags"></i> Прайс‑лист
+    </a>
+    <a href="team.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-users"></i> Команда
+    </a>
+    <a href="arts.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-picture-o"></i> Арт‑галерея
+    </a>
+    <a href="add-art.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-upload"></i> Додати арт
+    </a>
+  </nav>
+  <main>
+    <form id="messageForm" method="POST" action="/submit-message">
+      <label for="type">Виберіть тип повідомлення</label>
+      <select id="type" name="type" required>
+        <option value="">-- Виберіть --</option>
+        <option value="complaint">Скарга</option>
+        <option value="application">Подача анкети</option>
+      </select>
+
+      <!-- Complaint Section -->
+      <div id="complaintSection" class="hidden">
+        <label for="discordNameComplaint">Ім'я в Discord</label>
+        <input type="text" id="discordNameComplaint" name="discordNameComplaint" required>
+
+        <label for="complaint">Опишіть проблему (до 1500 символів)</label>
+        <textarea id="complaint" name="complaint" maxlength="1500"></textarea>
+      </div>
+
+      <!-- Application Section -->
+      <div id="applicationSection" class="hidden">
+        <label for="name">Ім'я</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="discordName">Ім'я в Discord</label>
+        <input type="text" id="discordName" name="discordName" required>
+
+        <label for="age">Вік</label>
+        <input type="number" id="age" name="age" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
+
+        <label for="description">Опис про себе (до 1000 символів)</label>
+        <textarea id="description" name="description" maxlength="1000" required></textarea>
+
+        <label for="position">Посада</label>
+        <select id="position" name="position" required>
+          <option value="">-- Виберіть --</option>
+          <option value="Модератор">Модератор</option>
+          <option value="Артист">Артист</option>
+          <option value="Адміністратор">Адміністратор</option>
+        </select>
+
+        <label for="reason">Чому саме дана посада?</label>
+        <textarea id="reason" name="reason" required></textarea>
+
+        <label for="experience">Досвід в адмініструванні (в годинах)</label>
+        <input type="number" id="experience" name="experience" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
+      </div>
+
+      <button type="submit">Відправити</button>
+    </form>
+  </main>
+  <footer>
+    <p>&copy; 2023 Художник Всесвіту. Всі права захищено.</p>
+  </footer>
+  <script src="/js/submit.js"></script>
+</body>
+</html>

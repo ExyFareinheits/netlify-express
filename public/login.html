@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Вхід у систему | KISO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Підключення Google Fonts для кирилиці -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Глобальний reset та основний шрифт */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      /* Фон із градієнтом фіолетових відтінків */
+      background: linear-gradient(135deg, #4b0082, #6a0dad);
+      background-size: 200% 200%;
+      animation: bgGradient 15s ease infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+    @keyframes bgGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    /* Центрований контейнер для форми входу */
+    .login-container {
+      background: rgba(255,255,255,0.96); /* легкий білий фон із прозорістю */
+      padding: 30px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      width: 320px;
+      text-align: center;
+    }
+    .login-container h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #4b0082;
+    }
+    /* Стилізація полів вводу */
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #d8bfd8;
+      border-radius: 4px;
+      font-size: 1em;
+      transition: border-color 0.3s ease;
+    }
+    .login-container input:focus {
+      border-color: #8a2be2;
+      outline: none;
+    }
+    /* Стилізація кнопки */
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #6a0dad, #8a2be2);
+      border: none;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .login-container button:hover {
+      transform: scale(1.02);
+      background: linear-gradient(135deg, #8a2be2, #6a0dad);
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Увійти</h2>
+    <form action="/login" method="POST">
+      <input type="text" name="login" placeholder="Логін" required>
+      <input type="password" name="password" placeholder="Пароль" required>
+      <button type="submit">Увійти</button>
+    </form>
+  </div>
+</body>
+</html>

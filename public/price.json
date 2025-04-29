@@ -1,0 +1,36 @@
+[
+  {
+    "id": "price1",
+    "name": "Рослинний Макет",
+    "price": 1500,
+    "numRatings": 5,
+    "totalRating": 22.3,
+    "averageRating": 4.5
+  },
+  {
+    "id": "price2",
+    "name": "Абстрактний Експеримент",
+    "price": 3200,
+    "numRatings": 2,
+    "totalRating": 7.2,
+    "averageRating": 3.6
+  },
+  {
+    "id": "price3",
+    "name": "Міський Контраст",
+    "price": 26479,
+    "numRatings": 2,
+    "totalRating": 5,
+    "averageRating": 2.5,
+    "title": "Міський Контраст",
+    "content": "2999"
+  },
+  {
+    "id": "price1745194827487",
+    "name": "Fa6er",
+    "price": 2566,
+    "numRatings": 2,
+    "totalRating": 5.4,
+    "averageRating": 2.7
+  }
+]

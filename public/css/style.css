@@ -1,0 +1,491 @@
+/* Підключення Google Fonts із підтримкою кирилиці */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap');
+
+/* Глобальний reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Фон з анімованим градієнтом (повністю фіолетові тони) */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                #6a0dad 20px,
+                #6a0dad 23px
+              ),
+              linear-gradient(135deg, #4b0082, #6a0dad); /* Перемістили стрічки на передній план */
+  background-size: 200% 200%;
+  animation: bgGradient 15s ease infinite, stripesMove 60s linear infinite; /* Added stripesMove animation */
+  color: #fff;
+  line-height: 1.6;
+  padding: 20px;
+  /* Додаємо нижній відступ, щоб футер не накладався на контент */
+  padding-bottom: 80px;
+}
+
+@keyframes bgGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes stripesMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%; /* Smooth diagonal movement */
+  }
+}
+
+/* Додавання анімованих псевдоелементів – рухомих фонів з «артами» */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: url('images/sample-art.png') repeat-x;
+  opacity: 0.15;
+  z-index: -1;
+}
+body::before {
+  top: 5%;
+  animation: moveUp 30s linear infinite;
+}
+body::after {
+  bottom: 5%;
+  animation: moveDown 30s linear infinite;
+}
+@keyframes moveUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+@keyframes moveDown {
+  from { transform: translateY(0); }
+  to { transform: translateY(100%); }
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #4b0082, #531dab);
+  padding: 30px 15px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+header h1 {
+  font-family: 'Pacifico', cursive; /* Змінено шрифт */
+  font-size: 3.5em; /* Збільшено розмір шрифту */
+  margin: 0;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #f5f7fa;
+  position: relative;
+  z-index: 1;
+}
+header h1:hover {
+  transform: scale(1.1);
+  color: #dcdcdc;
+}
+header::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+  animation: rotateGradient 10s linear infinite;
+  z-index: 0;
+}
+@keyframes rotateGradient {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Navigation (стандартне меню з застосуванням W3.CSS) */
+nav.w3-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px; /* Збільшено відстань між елементами */
+  margin: 25px 0;
+  padding: 15px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6a0dad, #7e3ca9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Додано тінь */
+}
+nav.w3-bar a {
+  font-family: 'Roboto', sans-serif; /* Змінено шрифт */
+  padding: 14px 25px; /* Збільшено відступи */
+  font-size: 1.2em; /* Збільшено розмір шрифту */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px; /* Збільшено радіус */
+  background: linear-gradient(135deg, #6a0dad, #8a2be2);
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+nav.w3-bar a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+nav.w3-bar a:hover::before {
+  left: 0;
+}
+nav.w3-bar a:hover {
+  transform: translateY(-5px); /* Збільшено підйом при наведенні */
+  opacity: 0.95;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Додано тінь при наведенні */
+  color: #fff;
+  z-index: 1;
+}
+
+/* Горизонтально прокручуване навігаційне меню */
+/* Цей блок застосовується за умови, що у ваших HTML-файлах контейнер навігації має клас "nav-scroll" */
+.nav-scroll {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: #0056b3;  /* Темний фон */
+  padding: 10px 0;
+}
+
+/* Приховуємо скролбар для Chrome, Safari та Opera */
+.nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Приховуємо скролбар для Firefox */
+.nav-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.nav-scroll a,
+.nav-scroll button {
+  flex: 0 0 auto;
+  margin: 0 10px;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  background: none;
+  border: none;
+  outline: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-scroll a:hover,
+.nav-scroll button:hover {
+  transform: scale(1.1);
+  background-color: #0088cc;
+  border-radius: 4px;
+}
+
+/* Якщо потрібно вирівняти останній елемент вправо */
+.nav-scroll a.last {
+  margin-left: auto;
+}
+
+/* Main контент */
+main {
+  font-family: 'Roboto', sans-serif; /* Змінено шрифт */
+  background: rgba(75, 0, 130, 0.95); /* Збільшено прозорість */
+  color: #ffffff; /* Змінено колір тексту */
+  padding: 30px; /* Збільшено відступи */
+  margin: 30px auto; /* Збільшено відступи */
+  max-width: 960px;
+  border-radius: 10px; /* Збільшено радіус */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5); /* Посилено тінь */
+  position: relative;
+  overflow: hidden;
+}
+main::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  animation: rotateGradient 15s linear infinite;
+  z-index: 0;
+}
+main * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Карточки */
+.w3-card {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4); /* Посилено тінь */
+  border-radius: 6px; /* Збільшено радіус */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.w3-card:hover {
+  transform: translateY(-5px); /* Збільшено підйом при наведенні */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Додано тінь при наведенні */
+}
+
+/* Footer - зафіксований внизу та розтягнутий */
+footer {
+  font-family: 'Roboto', sans-serif; /* Змінено шрифт */
+  background: linear-gradient(135deg, #4b0082, #6a0dad);
+  padding: 20px; /* Збільшено відступи */
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5); /* Додано тінь */
+  font-size: 1.1em; /* Збільшено розмір шрифту */
+  overflow: hidden;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  animation: rotateGradient 20s linear infinite;
+  z-index: 0;
+}
+footer * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Стилі для форм */
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px; /* Збільшено відступ */
+  color: inherit;
+  font-size: 1.1em; /* Збільшено розмір шрифту */
+}
+input[type="text"],
+textarea,
+select,
+input[type="file"] {
+  width: 100%;
+  padding: 12px; /* Збільшено відступи */
+  margin-bottom: 15px;
+  border: 1px solid #d8bfd8; /* Світло-фіолетовий */
+  border-radius: 6px; /* Збільшено радіус */
+  background: #51247d;
+  color: #704891;
+  font-size: 1.1em; /* Збільшено розмір шрифту */
+  transition: border-color 0.3s ease;
+}
+input[type="text"]:focus,
+textarea:focus,
+select:focus,
+input[type="file"]:focus {
+  border-color: #8a2be2;
+  outline: none;
+}
+button {
+  font-family: 'Roboto', sans-serif; /* Змінено шрифт */
+  background: linear-gradient(135deg, #6a0dad, #8a2be2);
+  color: #956ab2;
+  border: none;
+  padding: 12px 25px; /* Збільшено відступи */
+  margin-top: 10px;
+  border-radius: 6px; /* Збільшено радіус */
+  cursor: pointer;
+  font-size: 1.1em; /* Збільшено розмір шрифту */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+button:hover::before {
+  left: 0;
+}
+button:hover {
+  transform: scale(1.05); /* Збільшено масштаб при наведенні */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Додано тінь при наведенні */
+  z-index: 1;
+}
+
+/* Gallery item */
+.gallery-item {
+  margin-bottom: 25px; /* Збільшено відступи */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.gallery-item img {
+  transition: transform 0.3s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.1); /* Додано масштабування при наведенні */
+}
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gallery-item:hover::before {
+  opacity: 1;
+}
+
+/* Адаптивність */
+@media screen and (max-width: 600px) {
+  nav.w3-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Зменшено відстань між елементами */
+  }
+  main {
+    padding: 20px; /* Зменшено відступи */
+    margin: 20px auto; /* Зменшено відступи */
+  }
+}
+
+/* --- Універсальний оверрайд для "білих" блоків --- */
+
+/* Замінюємо білий фон контейнерів (клас w3-white, .login-container, #priceContent, .bg-white) 
+   на ніжний пастельний лавандовий відтінок із високою читабельністю тексту. */
+.w3-white,
+.login-container,
+#priceContent,
+.bg-white {
+  background-color: rgba(243, 229, 245, 0.95) !important; /* ніжний лавандовий фон */
+  color: #4b0082 !important; /* темно-фіолетовий колір тексту */
+}
+
+/* Якщо є додаткові блоки, які безпосередньо використовують #fff */
+.some-white-block {
+  background-color: rgba(243, 229, 245, 0.95) !important;
+  color: #4b0082 !important;
+}
+
+/* За бажанням – створення класу для використання на окремих елементах */
+.pastel-bg {
+  background-color: rgba(243, 229, 245, 0.95) !important;
+  color: #4b0082 !important;
+}
+
+/* Анімація оновлення сторінки */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #4b0082, #6a0dad);
+  z-index: 9999;
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 1;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.page-transition.active {
+  transform: scaleX(1);
+  transform-origin: right;
+  opacity: 1;
+}
+
+.page-transition.fade-out {
+  opacity: 0;
+}
+
+/* Додавання класу .stripes */
+.stripes {
+  background-color: #4b0082; /* Основний фіолетовий колір */
+  background-image: repeating-linear-gradient(
+    45deg, /* Кут нахилу смуг */
+    transparent,
+    transparent 20px,
+    #6a0dad 20px,
+    #6a0dad 23px
+  );
+}
+
+/* Response message styles */
+#responseMessage {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  text-align: center;
+}
+#responseMessage.accepted {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+#responseMessage.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Management panel button styles */
+.manage-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.manage-buttons button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+.manage-buttons .accept {
+  background-color: #28a745;
+  color: white;
+}
+.manage-buttons .accept:hover {
+  background-color: #218838;
+}
+.manage-buttons .reject {
+  background-color: #dc3545;
+  color: white;
+}
+.manage-buttons .reject:hover {
+  background-color: #c82333;
+}

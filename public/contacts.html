@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Контакти | Художник Всесвіту</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- W3.CSS та Font Awesome -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Власні стилі -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    /* Додатково: стиль для контактних соціальних посилань */
+    .social-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .social-links .social-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .social-item {
+      display: inline-block;
+      text-align: center;
+      color: #4b0082;
+      transition: color 0.3s ease;
+    }
+    .social-item a {
+      font-size: 2.5em;
+      display: block;
+      transition: color 0.3s ease;
+    }
+    .social-item a:hover {
+      color: #8a2be2;
+    }
+    .social-item span {
+      display: block;
+      margin-top: 8px;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/genre.js"></script>
+  <script src="js/upload.js"></script>
+
+  <!-- Header -->
+  <header class="w3-container w3-black">
+    <h1 class="w3-xxxlarge">Diminutive Dimensions</h1>
+  </header>
+
+  <!-- Навігаційне меню -->
+  <nav class="w3-bar w3-border-bottom w3-dark-grey">
+    <a href="index.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-home"></i> Головна
+    </a>
+    <a href="managers.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-user-circle"></i> Менеджери
+    </a>
+    <a href="contacts.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-phone"></i> Контакти
+    </a>
+    <a href="news.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-newspaper-o"></i> Новини
+    </a>
+    <a href="developments.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-lightbulb-o"></i> Розробки
+    </a>
+    <a href="price.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-tags"></i> Прайс‑лист
+    </a>
+    <a href="team.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-users"></i> Команда
+    </a>
+    <a href="arts.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-picture-o"></i> Арт‑галерея
+    </a>
+    <a href="add-art.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-upload"></i> Додати арт
+    </a>
+  </nav>
+
+  <!-- Основний блок контактів -->
+  <main class="w3-container" style="margin-top:20px;">
+    <h2 class="w3-text-white">Контакти</h2>
+    <div class="w3-card w3-white w3-padding w3-round">
+      <p>
+        Якщо у вас виникли будь-які запитання, пропозиції чи зауваження, або якщо ви бажаєте отримати додаткову інформацію про нашу творчість та послуги, ми запрошуємо вас звертатися до нас через офіційні канали зв’язку.
+      </p>
+      <p>
+        Наша команда завжди готова надати професійну консультацію та оперативно відповісти на ваші питання. Будь ласка, використовуйте наведені нижче платформи для зв’язку – ми цінуємо вашу зацікавленість і прагнемо до постійного вдосконалення якості обслуговування.
+      </p>
+      <hr>
+      <div class="social-links">
+        <div class="social-container">
+          <div class="social-item">
+            <a href="https://discord.gg/yourserver" target="_blank" title="Discord">
+              <i class="fa fa-comments"></i>
+            </a>
+            <span>Discord</span>
+          </div>
+          <div class="social-item">
+            <a href="https://t.me/yourgroup" target="_blank" title="Telegram">
+              <i class="fa fa-paper-plane"></i>
+            </a>
+            <span>Telegram</span>
+          </div>
+          <div class="social-item">
+            <a href="https://twitter.com/yourprofile" target="_blank" title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <span>Twitter</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-dark-grey w3-center w3-padding">
+    <p>&copy; 2023 Художник Всесвіту. Всі права захищено.</p>
+  </footer>
+</body>
+</html>

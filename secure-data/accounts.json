@@ -1,0 +1,51 @@
+[
+  {
+    "login": "001-KISO-1904",
+    "password": "3hip34y09a",
+    "role": "artist",
+    "accessLevel": "artist",
+    "rank": "Junior Artist"
+  },
+  {
+    "login": "002-FAREINHEITS-1904",
+    "password": "j90jj035j90j",
+    "role": "admin",
+    "accessLevel": "admin",
+    "rank": "Administrator"
+  },
+  {
+    "login": "003-ADMIN-2023",
+    "password": "adminpass123",
+    "role": "admin",
+    "accessLevel": "admin",
+    "rank": "Administrator"
+  },
+  {
+    "login": "004-ADMIN-2023",
+    "password": "secureadmin456",
+    "role": "admin",
+    "accessLevel": "admin",
+    "rank": "Administrator"
+  },
+  {
+    "login": "005-MODERATOR-2023",
+    "password": "modpass789",
+    "role": "moderator",
+    "accessLevel": "moderator",
+    "rank": "Moderator"
+  },
+  {
+    "login": "006-MODERATOR-2023",
+    "password": "modsecure101",
+    "role": "moderator",
+    "accessLevel": "moderator",
+    "rank": "Moderator"
+  },
+  {
+    "login": "007-MODERATOR-2023",
+    "password": "modpass202",
+    "role": "moderator",
+    "accessLevel": "moderator",
+    "rank": "Moderator"
+  }
+]

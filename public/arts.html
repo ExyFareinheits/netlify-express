@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Арт‑галерея | Художник Всесвіту</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Підключення зовнішніх стилів -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Основний стиль із фіолетовою палітрою -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    /* Додатковий стиль для селекту фільтру, адаптований під фіолетову гаму */
+    #categoryFilter {
+      margin: 20px auto;
+      max-width: 400px;
+      display: block;
+      padding: 10px;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 4px;
+      background: rgba(75, 0, 130, 0.9);
+      color: #fff;
+      font-size: 1em;
+    }
+    
+    /* Оновлений стиль для модального вікна – замість білого блоку використано ніжний фіолетовий градієнт */
+    #artModal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    #artModalContent {
+      /* Замість білого фону використано градієнт із пастельних фіолетових відтінків */
+      background: linear-gradient(135deg, #f3e5f5, #ede7f6);
+      margin: 5% auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 6px;
+      position: relative;
+      color: #4b0082;
+    }
+    #artModalClose {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #4b0082;
+      cursor: pointer;
+    }
+    #artModalContent img {
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="w3-container">
+    <h1 class="w3-xxxlarge">Diminutive Dimensions</h1>
+  </header>
+  
+  <!-- Navigation -->
+  <nav class="w3-bar">
+    <a href="index.html" class="w3-bar-item w3-button">
+      <i class="fa fa-home"></i> Головна
+    </a>
+    <a href="managers.html" class="w3-bar-item w3-button">
+      <i class="fa fa-user-circle"></i> Менеджери
+    </a>
+    <a href="contacts.html" class="w3-bar-item w3-button">
+      <i class="fa fa-phone"></i> Контакти
+    </a>
+    <a href="news.html" class="w3-bar-item w3-button">
+      <i class="fa fa-newspaper-o"></i> Новини
+    </a>
+    <a href="developments.html" class="w3-bar-item w3-button">
+      <i class="fa fa-lightbulb-o"></i> Розробки
+    </a>
+    <a href="price.html" class="w3-bar-item w3-button">
+      <i class="fa fa-tags"></i> Прайс‑лист
+    </a>
+    <a href="team.html" class="w3-bar-item w3-button">
+      <i class="fa fa-users"></i> Команда
+    </a>
+    <a href="arts.html" class="w3-bar-item w3-button w3-indigo">
+      <i class="fa fa-picture-o"></i> Арт‑галерея
+    </a>
+    <a href="add-art.html" class="w3-bar-item w3-button">
+      <i class="fa fa-upload"></i> Додати арт
+    </a>
+  </nav>
+  
+  <!-- Main контент -->
+  <main class="w3-container" style="margin-top:20px;">
+    <h2>Арт‑галерея</h2>
+    
+    <!-- Селект для вибору жанру (заповнюється динамічно через JS) -->
+    <select id="categoryFilter"></select>
+    
+    <!-- Контейнер галереї (арти завантажуються динамічно через gallery.js) -->
+    <div id="gallery" class="gallery">
+      <!-- Динамічний контент -->
+    </div>
+  </main>
+  
+  <!-- Модальне вікно для перегляду арту -->
+  <div id="artModal">
+    <div id="artModalContent">
+      <span id="artModalClose" onclick="closeArtModal()">&times;</span>
+      <!-- Динамічний контент модального вікна формується через JS -->
+    </div>
+  </div>
+  
+  <!-- Футер (зафіксований внизу) -->
+  <footer class="w3-container w3-center w3-padding">
+    <p>&copy; 2023 Художник Всесвіту. Всі права захищено.</p>
+  </footer>
+  
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

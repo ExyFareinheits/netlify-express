@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Додати арт | Художник Всесвіту</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Підключення CSS (W3.CSS, Font Awesome та ваші стилі) -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="w3-light-grey">
+  <header class="w3-container w3-black">
+    <h1 class="w3-xxxlarge">Diminutive Dimensions</h1>
+  </header>
+  
+  <nav class="w3-bar w3-border-bottom w3-dark-grey">
+    <a href="index.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-home"></i> Головна
+    </a>
+    <a href="add-art.html" class="w3-bar-item w3-button w3-hover-indigo">
+      <i class="fa fa-upload"></i> Додати арт
+    </a>
+    <!-- Інші пункти меню -->
+  </nav>
+  
+  <main class="w3-container" style="margin-top:20px;">
+    <h2 class="w3-text-white">Додати арт</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <!-- Публічне завантаження: приховане поле mode="main" -->
+      <input type="hidden" name="mode" value="main">
+      <label for="category">Обрати категорію:</label>
+      <select name="category" id="category" required>
+        <option value="fanart">Фан арти</option>
+        <option value="fanart_nsfw">Фан арти NSFW</option>
+      </select>
+      <br>
+      <input type="text" name="artTitle" placeholder="Назва арту" required>
+      <br>
+      <label for="description">Опис (до 950 символів):</label>
+      <textarea name="description" id="description" maxlength="950" placeholder="Введіть опис (до 950 символів)"></textarea>
+      <br>
+      <input type="file" name="artFile" accept="image/png, image/jpg, image/jpeg" required>
+      <br>
+      <button type="submit">Завантажити</button>
+    </form>
+  </main>
+  
+  <footer class="w3-container w3-dark-grey w3-center w3-padding">
+    <p>&copy; 2023 Художник Всесвіту. Всі права захищено.</p>
+  </footer>
+</body>
+</html>

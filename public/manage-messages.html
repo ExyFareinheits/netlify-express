@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Управління повідомленнями та адміністраторами</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #4b0082, #6a0dad);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #6a0dad;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    main {
+      max-width: 1200px;
+      margin: 30px auto 30px auto;
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      padding: 30px;
+    }
+    h2 {
+      color: #fff;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #fff2;
+      padding-bottom: 5px;
+    }
+    .message, .admin-entry {
+      border: 1px solid #fff3;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.13);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      color: #fff;
+    }
+    .message h3, .admin-entry h3 { margin: 0 0 10px; }
+    .message p, .admin-entry p { margin: 5px 0; }
+    .manage-buttons, .admin-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .manage-buttons button, .admin-buttons button, .admin-form button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      background: #6a0dad;
+      color: white;
+      transition: background 0.3s;
+    }
+    .manage-buttons .accept, .admin-buttons .edit {
+      background-color: #28a745;
+    }
+    .manage-buttons .accept:hover, .admin-buttons .edit:hover {
+      background-color: #218838;
+    }
+    .manage-buttons .reject, .admin-buttons .delete {
+      background-color: #dc3545;
+    }
+    .manage-buttons .reject:hover, .admin-buttons .delete:hover {
+      background-color: #c82333;
+    }
+    .admin-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+    .admin-form input, .admin-form select {
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+      margin-right: 10px;
+      font-size: 1em;
+    }
+    .admin-form button {
+      background: #4b0082;
+      color: #fff;
+    }
+    .admin-form button:hover {
+      background: #6a0dad;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #4b0082;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Управління повідомленнями та адміністраторами</h1>
+  </header>
+  <main>
+    <h2>Адміністратори</h2>
+    <form class="admin-form" id="addAdminForm">
+      <input type="text" name="login" placeholder="Логін" required>
+      <input type="password" name="password" placeholder="Пароль" required>
+      <select name="role" required>
+        <option value="">Оберіть роль</option>
+        <option value="артист">Артист</option>
+        <option value="модератор">Модератор</option>
+        <option value="адміністратор">Адміністратор</option>
+      </select>
+      <select name="accessLevel" required>
+        <option value="">Оберіть рівень доступу</option>
+        <option value="artist">Артист</option>
+        <option value="moderator">Модератор</option>
+        <option value="admin">Адміністратор</option>
+      </select>
+      <select name="rank" required>
+        <option value="">Оберіть звання</option>
+        <option value="Junior Artist">Junior Artist</option>
+        <option value="Artist">Artist</option>
+        <option value="Moderator">Moderator</option>
+        <option value="Administrator">Administrator</option>
+        <option value="Lead">Lead</option>
+      </select>
+      <button type="submit"><i class="fa fa-plus"></i> Додати</button>
+    </form>
+    <div id="admins"></div>
+
+    <h2>Скарги</h2>
+    <div id="complaints"></div>
+    <h2>Анкети</h2>
+    <div id="applications"></div>
+  </main>
+  <footer>
+    <p>&copy; 2023 Художник Всесвіту. Всі права захищено.</p>
+  </footer>
+  <script src="/js/manage-messages.js"></script>
+</body>
+</html>
